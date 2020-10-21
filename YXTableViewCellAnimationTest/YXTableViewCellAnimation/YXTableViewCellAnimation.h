@@ -43,6 +43,8 @@ typedef NS_ENUM(NSUInteger, YXTableViewCellAnimationType) {
 
 @interface YXTableViewCellAnimation : NSObject
 
++ (instancetype)sharedManager;
+
 /**
  * 初始时，显示动画
  * @param tableView 基础视图
@@ -52,7 +54,7 @@ typedef NS_ENUM(NSUInteger, YXTableViewCellAnimationType) {
  * @param usingSpringWithDamping 振动效果 0~1
  * @param initialSpringVelocity 初始的速度，数值越大一开始移动越快
  */
-+ (void)initShowAnimationWithTableViewByType:(UITableView *)tableView
+- (void)initShowAnimationWithTableViewByType:(UITableView *)tableView
                                animationType:(YXTableViewCellAnimationType)animationType
                                     duration:(CGFloat)duration
                                        delay:(CGFloat)delay
@@ -71,7 +73,7 @@ typedef NS_ENUM(NSUInteger, YXTableViewCellAnimationType) {
  * @param usingSpringWithDamping 振动效果 0~1
  * @param initialSpringVelocity 初始的速度，数值越大一开始移动越快
  */
-+ (void)scrollShowAnimationWithTableViewCellByType:(UITableView *)tableView
+- (void)scrollShowAnimationWithTableViewCellByType:(UITableView *)tableView
                                               cell:(UITableViewCell *)cell
                                      animationType:(YXTableViewCellAnimationType)animationType
                                              index:(NSInteger)index

@@ -9,8 +9,19 @@
 
 @implementation YXTableViewCellAnimation
 
++ (instancetype)sharedManager {
+    
+    static dispatch_once_t onceToken;
+    static YXTableViewCellAnimation *instance;
+    dispatch_once(&onceToken, ^{
+        
+        instance = [[YXTableViewCellAnimation alloc] init];
+    });
+    return instance;
+}
+
 #pragma mark - 初始时，显示动画
-+ (void)initShowAnimationWithTableViewByType:(UITableView *)tableView animationType:(YXTableViewCellAnimationType)animationType duration:(CGFloat)duration delay:(CGFloat)delay usingSpringWithDamping:(CGFloat)usingSpringWithDamping initialSpringVelocity:(CGFloat)initialSpringVelocity {
+- (void)initShowAnimationWithTableViewByType:(UITableView *)tableView animationType:(YXTableViewCellAnimationType)animationType duration:(CGFloat)duration delay:(CGFloat)delay usingSpringWithDamping:(CGFloat)usingSpringWithDamping initialSpringVelocity:(CGFloat)initialSpringVelocity {
     
     NSArray *cells = tableView.visibleCells;
     switch (animationType) {
@@ -213,7 +224,7 @@
 }
 
 #pragma mark - 滚动时，显示动画
-+ (void)scrollShowAnimationWithTableViewCellByType:(UITableView *)tableView cell:(UITableViewCell *)cell animationType:(YXTableViewCellAnimationType)animationType index:(NSInteger)index amount:(NSInteger)amount duration:(CGFloat)duration delay:(CGFloat)delay usingSpringWithDamping:(CGFloat)usingSpringWithDamping initialSpringVelocity:(CGFloat)initialSpringVelocity {
+- (void)scrollShowAnimationWithTableViewCellByType:(UITableView *)tableView cell:(UITableViewCell *)cell animationType:(YXTableViewCellAnimationType)animationType index:(NSInteger)index amount:(NSInteger)amount duration:(CGFloat)duration delay:(CGFloat)delay usingSpringWithDamping:(CGFloat)usingSpringWithDamping initialSpringVelocity:(CGFloat)initialSpringVelocity {
     
     switch (animationType) {
         case YXTableViewCellAnimationTypeMove: {

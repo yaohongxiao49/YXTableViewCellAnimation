@@ -118,7 +118,7 @@
             break;
     }
     
-    [YXTableViewCellAnimation initShowAnimationWithTableViewByType:_tableView animationType:_animationType duration:1 delay:0 usingSpringWithDamping:0 initialSpringVelocity:0];
+    [[YXTableViewCellAnimation sharedManager] initShowAnimationWithTableViewByType:_tableView animationType:_animationType duration:1 delay:0 usingSpringWithDamping:0 initialSpringVelocity:0];
 }
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
@@ -138,7 +138,7 @@
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [YXTableViewCellAnimation scrollShowAnimationWithTableViewCellByType:tableView cell:cell animationType:_animationType index:indexPath.row amount:self.dataSourceArr.count duration:0 delay:0 usingSpringWithDamping:0 initialSpringVelocity:0];
+    [[YXTableViewCellAnimation sharedManager] scrollShowAnimationWithTableViewCellByType:tableView cell:cell animationType:_animationType index:indexPath.row amount:self.dataSourceArr.count duration:0 delay:0 usingSpringWithDamping:0 initialSpringVelocity:0];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -20,6 +20,7 @@
 		8466F7E5253FE76A00C2C45B /* YXAnimationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8466F7E3253FE76A00C2C45B /* YXAnimationCell.m */; };
 		8466F7E6253FE76A00C2C45B /* YXAnimationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8466F7E4253FE76A00C2C45B /* YXAnimationCell.xib */; };
 		8466F7F325400A0B00C2C45B /* YXTableViewCellAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8466F7F225400A0B00C2C45B /* YXTableViewCellAnimation.m */; };
+		A86EB7808612F5C31E5EA77D /* libPods-YXTableViewCellAnimationTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F92A4550709C7C972F429D /* libPods-YXTableViewCellAnimationTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00F92A4550709C7C972F429D /* libPods-YXTableViewCellAnimationTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YXTableViewCellAnimationTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1294595673A86603D8AA13C3 /* Pods-YXTableViewCellAnimationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXTableViewCellAnimationTest.release.xcconfig"; path = "Target Support Files/Pods-YXTableViewCellAnimationTest/Pods-YXTableViewCellAnimationTest.release.xcconfig"; sourceTree = "<group>"; };
 		8466F79A253FE5FE00C2C45B /* YXTableViewCellAnimationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXTableViewCellAnimationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8466F79D253FE5FE00C2C45B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8466F79E253FE5FE00C2C45B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		8466F7E4253FE76A00C2C45B /* YXAnimationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YXAnimationCell.xib; sourceTree = "<group>"; };
 		8466F7F125400A0B00C2C45B /* YXTableViewCellAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXTableViewCellAnimation.h; sourceTree = "<group>"; };
 		8466F7F225400A0B00C2C45B /* YXTableViewCellAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXTableViewCellAnimation.m; sourceTree = "<group>"; };
+		AF37DD25BC036269019C66EF /* Pods-YXTableViewCellAnimationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YXTableViewCellAnimationTest.debug.xcconfig"; path = "Target Support Files/Pods-YXTableViewCellAnimationTest/Pods-YXTableViewCellAnimationTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86EB7808612F5C31E5EA77D /* libPods-YXTableViewCellAnimationTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		226116515C67F70B503103C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00F92A4550709C7C972F429D /* libPods-YXTableViewCellAnimationTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8466F791253FE5FE00C2C45B = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,8 @@
 				8466F7B8253FE60000C2C45B /* YXTableViewCellAnimationTestTests */,
 				8466F7C3253FE60000C2C45B /* YXTableViewCellAnimationTestUITests */,
 				8466F79B253FE5FE00C2C45B /* Products */,
+				AC59B01BC2978634BC5EC4DB /* Pods */,
+				226116515C67F70B503103C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +186,16 @@
 			path = YXTableViewCellAnimation;
 			sourceTree = "<group>";
 		};
+		AC59B01BC2978634BC5EC4DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF37DD25BC036269019C66EF /* Pods-YXTableViewCellAnimationTest.debug.xcconfig */,
+				1294595673A86603D8AA13C3 /* Pods-YXTableViewCellAnimationTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8466F7C9253FE60000C2C45B /* Build configuration list for PBXNativeTarget "YXTableViewCellAnimationTest" */;
 			buildPhases = (
+				3C736DF55B83EA5483F7A10A /* [CP] Check Pods Manifest.lock */,
 				8466F796253FE5FE00C2C45B /* Sources */,
 				8466F797253FE5FE00C2C45B /* Frameworks */,
 				8466F798253FE5FE00C2C45B /* Resources */,
+				A4F6142EE75AE8FF0A6483CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +322,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C736DF55B83EA5483F7A10A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YXTableViewCellAnimationTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4F6142EE75AE8FF0A6483CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YXTableViewCellAnimationTest/Pods-YXTableViewCellAnimationTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YXTableViewCellAnimationTest/Pods-YXTableViewCellAnimationTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YXTableViewCellAnimationTest/Pods-YXTableViewCellAnimationTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8466F796253FE5FE00C2C45B /* Sources */ = {
@@ -476,6 +545,7 @@
 		};
 		8466F7CA253FE60000C2C45B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF37DD25BC036269019C66EF /* Pods-YXTableViewCellAnimationTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -495,6 +565,7 @@
 		};
 		8466F7CB253FE60000C2C45B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1294595673A86603D8AA13C3 /* Pods-YXTableViewCellAnimationTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
