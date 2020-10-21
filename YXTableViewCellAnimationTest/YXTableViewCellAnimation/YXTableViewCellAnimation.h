@@ -47,8 +47,17 @@ typedef NS_ENUM(NSUInteger, YXTableViewCellAnimationType) {
  * 初始时，显示动画
  * @param tableView 基础视图
  * @param animationType 显示动画类型
+ * @param duration 持续时间
+ * @param delay 延迟时间
+ * @param usingSpringWithDamping 振动效果 0~1
+ * @param initialSpringVelocity 初始的速度，数值越大一开始移动越快
  */
-+ (void)initShowAnimationWithTableViewByType:(UITableView *)tableView animationType:(YXTableViewCellAnimationType)animationType;
++ (void)initShowAnimationWithTableViewByType:(UITableView *)tableView
+                               animationType:(YXTableViewCellAnimationType)animationType
+                                    duration:(CGFloat)duration
+                                       delay:(CGFloat)delay
+                      usingSpringWithDamping:(CGFloat)usingSpringWithDamping
+                       initialSpringVelocity:(CGFloat)initialSpringVelocity;
 
 /**
  * 滚动时，显示动画
@@ -57,8 +66,20 @@ typedef NS_ENUM(NSUInteger, YXTableViewCellAnimationType) {
  * @param animationType 显示动画类型
  * @param index 当前下标
  * @param amount 显示视图总数
+ * @param duration 持续时间
+ * @param delay 延迟时间
+ * @param usingSpringWithDamping 振动效果 0~1
+ * @param initialSpringVelocity 初始的速度，数值越大一开始移动越快
  */
-+ (void)scrollShowAnimationWithTableViewCellByType:(UITableView *)tableView cell:(UITableViewCell *)cell animationType:(YXTableViewCellAnimationType)animationType index:(NSInteger)index amount:(NSInteger)amount;
++ (void)scrollShowAnimationWithTableViewCellByType:(UITableView *)tableView
+                                              cell:(UITableViewCell *)cell
+                                     animationType:(YXTableViewCellAnimationType)animationType
+                                             index:(NSInteger)index
+                                            amount:(NSInteger)amount
+                                          duration:(CGFloat)duration
+                                             delay:(CGFloat)delay
+                            usingSpringWithDamping:(CGFloat)usingSpringWithDamping
+                             initialSpringVelocity:(CGFloat)initialSpringVelocity;
 
 @end
 
