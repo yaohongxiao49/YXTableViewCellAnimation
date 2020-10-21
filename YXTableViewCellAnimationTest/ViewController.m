@@ -33,7 +33,15 @@
     [refreshBtn.titleLabel setFont:[UIFont systemFontOfSize:12]];
     [refreshBtn addTarget:self action:@selector(progressRefreshBtn) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithCustomView:refreshBtn];
-    self.navigationItem.leftBarButtonItem = refreshItem;
+    
+    UIButton *alertBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [alertBtn setTitle:@"alert" forState:UIControlStateNormal];
+    [alertBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [alertBtn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    [alertBtn addTarget:self action:@selector(progressAlertBtn) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *alertItem = [[UIBarButtonItem alloc] initWithCustomView:alertBtn];
+    
+    self.navigationItem.leftBarButtonItems = @[refreshItem, alertItem];
     
     _changeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 30)];
     [_changeBtn setTitle:@"move->切换" forState:UIControlStateNormal];
@@ -51,10 +59,12 @@
 }
 
 #pragma mark - progress
+#pragma mark - 刷新
 - (void)progressRefreshBtn {
     
     [_tableView reloadData];
 }
+#pragma mark - 更改动画
 - (void)progressChangeBtn {
     
     [_tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO]; 
@@ -119,6 +129,34 @@
     }
     
     [[YXTableViewCellAnimation sharedManager] initShowAnimationWithTableViewByType:_tableView animationType:_animationType duration:1 delay:0 usingSpringWithDamping:0 initialSpringVelocity:0];
+}
+#pragma mark - Lookin
+- (void)progressAlertBtn {
+    
+    __weak typeof(self) weakSelf = self;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Looking" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+     
+    UIAlertAction *exportAction = [UIAlertAction actionWithTitle:@"导出当前UI结构" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_Export" object:nil];
+    }];
+    UIAlertAction *twoDAction = [UIAlertAction actionWithTitle:@"2D元素" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        weakSelf.maskView.hidden = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
+    }];
+    UIAlertAction *thirdDAction = [UIAlertAction actionWithTitle:@"3D元素" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        weakSelf.maskView.hidden = NO;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_3D" object:nil];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:exportAction];
+    [alertController addAction:twoDAction];
+    [alertController addAction:thirdDAction];
+    [alertController addAction:cancelAction];
+     
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - <UITableViewDataSource, UITableViewDelegate>
