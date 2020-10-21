@@ -142,12 +142,10 @@
     }];
     UIAlertAction *twoDAction = [UIAlertAction actionWithTitle:@"2D元素" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        weakSelf.maskView.hidden = NO;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
     }];
     UIAlertAction *thirdDAction = [UIAlertAction actionWithTitle:@"3D元素" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        weakSelf.maskView.hidden = NO;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_3D" object:nil];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
